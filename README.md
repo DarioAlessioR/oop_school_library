@@ -26,6 +26,16 @@ Override can_use_services? so it always returns true.
 
 - Each class should be saved in a separate file.
 
+## Getting Started
+Prerequisites
+Get a local copy by clonning this repo.
+
+You need to have a code editor to be able to run the code.
+
+To run the code please use the "Code Runner" VSCode extension
+OR
+ruby main.rb in the terminal
+
 ## Built With:
 Major languages: Ruby
 Technologies used: VSC, Github, Gitflow
