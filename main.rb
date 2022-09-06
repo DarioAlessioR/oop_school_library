@@ -1,8 +1,8 @@
-require_relative './person.rb'
-require_relative './student.rb'
-require_relative './teacher.rb'
-require_relative './capitalize_decorator.rb'
-require_relative './trimmer_decorator.rb'
+require_relative './person'
+require_relative './student'
+require_relative './teacher'
+require_relative './capitalize_decorator'
+require_relative './trimmer_decorator'
 
 person = Person.new(22, 'maximilianus')
 person.correct_name
