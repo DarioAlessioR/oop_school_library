@@ -5,36 +5,42 @@
 ## Project description:
 Create a tool to record what books are in the library and who borrows them.
 
+The app will allow to:
+
+- Add new students or teachers.
+
+- Add new books.
+
+- Save records of who borrowed a given book and when.
+
 ## Project Requirements:
-- Create class Person with the following:
-Instance vars: @id, @name, and @age.
-Constructor with name, age, and parent_permission as parameter. name and parent_permission are optional and have default values of "Unknown" and true.
-Getters for @id, @name, and @age.
-Setters for @name and @age.
-Private method is_of_age? that returns true if @age is greater or equal to 18 and false otherwise.
-Public method can_use_services? that returns true if person is of age or if they have permission from parents.
+Create the entities presented in this diagram:
 
-- Create class Student with the following:
-Inherits from Person.
-Constructor extends parent's constructor by adding @classroom and a parameter for it.
-Method play_hooky that returns "¯\(ツ)/¯".
+![](images/uml_class_diagram.png)
 
-- Create class Teacher with the following:
-Inherits from Person.
-Constructor extends parent's constructor by adding @specialization and a parameter for it.
-Override can_use_services? so it always returns true.
+List of projects to be completed:
 
-- Each class should be saved in a separate file.
+-Project 1: add Person, Student, and Teacher classes.
+
+-Project 2: use the "Decorator" design pattern.
+
+-Project 3: set up associations.
+
+-Project 4: add basic UI.
+
+-Project 5: refactor your code.
+
+-Project 6: preserve data.
+
+-Project 7: unit tests.
+
 
 ## Getting Started
-Prerequisites
+
 Get a local copy by clonning this repo.
 
-You need to have a code editor to be able to run the code.
-
-To run the code please use the "Code Runner" VSCode extension
-OR
-ruby main.rb in the terminal
+To run the code please use the "Code Runner" VSCode extension or
+ruby main.rb in the terminal.
 
 ## Built With:
 Major languages: Ruby
