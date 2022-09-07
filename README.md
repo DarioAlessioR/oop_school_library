@@ -7,11 +7,11 @@ Create a tool to record what books are in the library and who borrows them.
 
 The app will allow to:
 
-Add new students or teachers.
+- Add new students or teachers.
 
-Add new books.
+- Add new books.
 
-Save records of who borrowed a given book and when.
+- Save records of who borrowed a given book and when.
 
 ## Project Requirements:
 Create the entities presented in this diagram:
@@ -36,14 +36,11 @@ List of projects to be completed:
 
 
 ## Getting Started
-Prerequisites
+
 Get a local copy by clonning this repo.
 
-You need to have a code editor to be able to run the code.
-
-To run the code please use the "Code Runner" VSCode extension
-OR
-ruby main.rb in the terminal
+To run the code please use the "Code Runner" VSCode extension or
+ruby main.rb in the terminal.
 
 ## Built With:
 Major languages: Ruby
