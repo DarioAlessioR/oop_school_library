@@ -8,7 +8,7 @@ class Person < Nameable
   def initialize(
     age,
     name = 'Unknown',
-    parent_permission: true
+    parent_permission = true
   )
     super()
     @id = Random.rand(1..1000)
@@ -26,9 +26,8 @@ class Person < Nameable
     @name
   end
 
-  def add_rental(rental)
-    @rentals.push(rental)
-    rentals.person = self
+  def add_rental(book, date)
+    Rental.new(book, date, self)
   end
 
   private
