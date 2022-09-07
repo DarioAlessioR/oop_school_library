@@ -34,14 +34,14 @@ def main
     p salon_b
     p estud
 
-    profe = Teacher.new(55, 'Math, 'Loco')
+    profe = Teacher.new(55, 'Math', 'Loco')
     p profe
 
     libro = Book.new('Sapiens', 'Yuval Harari')
     puts libro.title
     puts libro.author
 
-    renta = Rental.new('2022-01-01', libro, estud)
+    renta = Rental.new(2022-01-01, libro, estud)
     puts renta.book.title
     puts renta.person.name
     puts renta.date
