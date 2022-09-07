@@ -3,7 +3,12 @@ require_relative './person'
 class Student < Person
   attr_accessor :classroom
 
-  def initialize(age, classroom, name: 'Unknown', parent_permission: true)
+  def initialize(
+    age,
+    classroom,
+    name = 'Unknown',
+    parent_permission = true
+    )
     super(age, name, parent_permission)
     @classroom = classroom
   end
@@ -12,7 +17,7 @@ class Student < Person
     "¯\(ツ)/¯"
   end
 
-  def belongs_to_classroom(classroom)
+  def belongs_to(classroom)
     @classroom = classroom
     classroom.students.push(self) unless classroom.students.include?(self)
   end

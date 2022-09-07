@@ -9,7 +9,7 @@ class Rental
   end
 
   def belongs_to
-    @rentals.push = self
+    @rentals << self
     book.rentals << self unless book.rentals.include?(self)
     person.rentals << self unless person.rentals.include?(self)
   end
