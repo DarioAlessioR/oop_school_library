@@ -3,6 +3,9 @@ require_relative './student'
 require_relative './teacher'
 require_relative './capitalize_decorator'
 require_relative './trimmer_decorator'
+require_relative './classroom'
+require_relative './rental'
+require_relative './book'
 
 person = Person.new(22, 'maximilianus')
 person.correct_name
