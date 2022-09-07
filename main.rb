@@ -18,34 +18,33 @@ require_relative './book'
 #puts pp.age
 
 def main
-    salon = Classroom.new("Salon A")
+    salon = Classroom.new('Salon A')
     p salon
 
-    salonB = Classroom.new("Salon B")
-    p salonB
+    salon_b = Classroom.new('Salon B')
+    p salon_b
 
-    salonC = Classroom.new("Salon C")
-    p salonC
+    salon_c = Classroom.new('Salon C')
+    p salon_c
 
-    estud = Student.new(10, salon, "Jose")
+    estud = Student.new(10, salon, 'Jose')
     p estud
     
-    salonB.add_student(estud)
-    p salonB
+    salon_b.add_student(estud)
+    p salon_b
     p estud
 
-    profe = Teacher.new(55, "Math", "Loco")
+    profe = Teacher.new(55, 'Math, 'Loco')
     p profe
-    
-    libro = Book.new("Sapiens", "Yuval Harari")
+
+    libro = Book.new('Sapiens', 'Yuval Harari')
     puts libro.title
     puts libro.author
-    
-    renta = Rental.new("2022-01-01", libro, estud)
+
+    renta = Rental.new('2022-01-01', libro, estud)
     puts renta.book.title
     puts renta.person.name
     puts renta.date
-
 end
 
 main

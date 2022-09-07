@@ -14,4 +14,3 @@ class Rental
     person.rentals << self unless person.rentals.include?(self)
   end
 end
-  
