@@ -8,7 +8,9 @@ Create a tool to record what books are in the library and who borrows them.
 The app will allow to:
 
 Add new students or teachers.
+
 Add new books.
+
 Save records of who borrowed a given book and when.
 
 ## Project Requirements:
@@ -19,12 +21,19 @@ Create the entities presented in this diagram:
 List of projects to be completed:
 
 -Project 1: add Person, Student, and Teacher classes.
+
 -Project 2: use the "Decorator" design pattern.
+
 -Project 3: set up associations.
+
 -Project 4: add basic UI.
+
 -Project 5: refactor your code.
+
 -Project 6: preserve data.
+
 -Project 7: unit tests.
+
 
 ## Getting Started
 Prerequisites
