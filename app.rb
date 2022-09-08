@@ -176,7 +176,6 @@ class App
 
   def list_rentals
     if @people.length.positive?
-      p @rentals
       puts 'Please, type the ID of the person you want to rent from this list:'
       @people.each_with_index { |people, idx|
         print "#{idx + 1}) [#{people.class}] Name: #{people.name}, Age: #{people.age}, ID: #{people.id}\n" }
