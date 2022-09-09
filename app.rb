@@ -1,21 +1,9 @@
 require_relative './person'
 require_relative './student'
 require_relative './teacher'
-require_relative './capitalize_decorator'
-require_relative './trimmer_decorator'
 require_relative './classroom'
 require_relative './rental'
 require_relative './book'
-
-# functionalities of class App:
-
-# 1) List all books.
-# 2) List all people.
-# 3) Create a person (teacher or student, not a plain Person).
-# 4) Create a book.
-# 5) Create a rental.
-# 6) List all rentals for a given person id
-# 7) Exit from app
 
 class App
   def initialize
