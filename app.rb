@@ -19,11 +19,9 @@ class App
   end
 
   def list_books
-    puts 'List of all books:'
-    puts "\n"
+    print "List of all books:\n\n"
     if @books.empty?
-      puts 'Sorry, no books available at this time.'
-      puts "\n"
+      puts "Sorry, no books available at this time.\n"
       sleep(2)
       run
     else
