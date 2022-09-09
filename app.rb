@@ -79,11 +79,10 @@ class App
   end
 
   def add_person
-    puts 'Please enter age:'
+    puts 'Please, enter age:'
     age = gets.chomp.to_i
     if age < 18
-      puts 'For youngers than 18 you need parent permission.'
-      puts 'Does this person has parent permission (y/n)?:'
+      puts 'Age is below 18. Does this person has parent permission (y/n)?:'
       permission = gets.chomp
       case permission
       when 'n'
