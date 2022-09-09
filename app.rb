@@ -53,9 +53,9 @@ class App
     puts 'List of all books:'
     puts "\n"
     if @books.empty? then puts 'Sorry, no books available at this time.'
-    puts "\n"
-    sleep(2)
-    run
+        puts "\n"
+        sleep(2)
+        run
     else
       @books.each_with_index { |book, idx| print "#{idx + 1}) Title: #{book.title}, Author: #{book.author}\n" }
       sleep(2)
