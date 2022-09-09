@@ -75,29 +75,37 @@ class App
     opc = gets.chomp
     case opc
     when '1'
-      puts 'Please enter name:'
-      name = gets.chomp
-      puts 'Please enter teacher specialization:'
-      specialization = gets.chomp
-      teacher = Teacher.new(age, specialization, name)
-      @people << teacher
-      puts 'Congratulations, you created a teacher!!!'
-      puts "\n"
-      sleep(2)
-      run
+      enroll_teacher(age)
     when '2'
-      puts 'Please enter name:'
-      name = gets.chomp
-      student = Student.new(age, nil, name)
-      @people << student
-      puts 'Congratulations, you created a student!!!'
-      puts "\n"
-      sleep(2)
-      run
+      enroll_student(age)
     else
       puts 'Please select 1 or 2, no other options available.'
       sleep(2)
     end
+    run
+  end
+
+  def enroll_teacher(age)
+    puts 'Please enter name:'
+    name = gets.chomp
+    puts 'Please enter teacher specialization:'
+    specialization = gets.chomp
+    teacher = Teacher.new(age, specialization, name)
+    @people << teacher
+    puts 'Congratulations, you created a teacher!!!'
+    puts "\n"
+    sleep(2)
+    run
+  end
+
+  def enroll_student(age)
+    puts 'Please enter name:'
+    name = gets.chomp
+    student = Student.new(age, nil, name)
+    @people << student
+    puts 'Congratulations, you created a student!!!'
+    puts "\n"
+    sleep(2)
     run
   end
 
