@@ -45,7 +45,6 @@ def main
   puts renta.book.title
   puts renta.person.name
   puts renta.date
-
 end
 
 main

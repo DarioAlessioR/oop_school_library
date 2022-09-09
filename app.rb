@@ -38,7 +38,10 @@ class App
     puts '6) List all rentals for a given person id'
     puts '7) Exit from app'
     puts "\n"
-    
+    options
+  end
+
+  def options
     opc = gets.chomp
     case opc
     when '1'
@@ -56,23 +59,23 @@ class App
     when '7'
       exit_from_app
     else print "Please select a valid option (1 to 7)\n"
-      sleep(2)
-      run
+    sleep(2)
+    run
     end
   end
 
   def list_books
     puts 'List of all books:'
     puts "\n"
-    if @books.length() < 1 then puts 'Sorry, no books available at this time.'
-      puts "\n"
-      sleep(2)
+    if @books.empty? then puts 'Sorry, no books available at this time.'
+    puts "\n"
+    sleep(2)
     run
     else
       @books.each_with_index { |book, idx| print "#{idx + 1}) Title: #{book.title}, Author: #{book.author}\n" }
       sleep(2)
-    run
     end
+    run
   end
 
   def add_book
@@ -83,7 +86,7 @@ class App
     book = Book.new(title, author)
     @books << book
     puts "\n"
-    puts "Congratulations, you created a book!!!"
+    puts 'Congratulations, you created a book!!!'
     puts "\n"
     sleep(2)
     run
@@ -92,15 +95,16 @@ class App
   def add_person
     puts 'Please enter age:'
     age = gets.chomp.to_i
-    if age < 18 then
+    if age < 18
       puts 'For youngers than 18 you need parent permission.'
       puts 'Does this person has parent permission (y/n)?:'
       permission = gets.chomp
-      if permission =='n'
+      case permission
+      when 'n'
         puts 'Sorry, it is not possible to create this person.'
         sleep(2)
         run
-      elsif permission == 'y'
+      when 'y'
         enroll(age)
       else
         puts 'Please, select "y" or "n".'
@@ -112,10 +116,11 @@ class App
     end
   end
 
-  def enroll(age)       
+  def enroll(age)
     puts 'Please enter 1 to create a teacher, 2 to create a student:'
     opc = gets.chomp
-    if opc == '1' then
+    case opc
+    when '1'
       puts 'Please enter name:'
       name = gets.chomp
       puts 'Please enter teacher specialization:'
@@ -123,38 +128,39 @@ class App
       teacher = Teacher.new(age, specialization, name)
       @people << teacher
       puts 'Congratulations, you created a teacher!!!'
-      puts"\n"
+      puts "\n"
       sleep(2)
       run
-    elsif opc == '2'
+    when '2'
       puts 'Please enter name:'
       name = gets.chomp
       student = Student.new(age, nil, name)
       @people << student
       puts 'Congratulations, you created a student!!!'
-      puts"\n"
+      puts "\n"
       sleep(2)
       run
     else
       puts 'Please select 1 or 2, no other options available.'
       sleep(2)
-      run
-    end   
+    end
+    run
   end
 
   def list_people
     puts 'List of all registered people:'
     puts "\n"
-    if @people.length() < 1 then puts 'Sorry, no people registered yet.'
-      puts "\n"
-      sleep(2)
-      run
+    if @people.length < 1 then puts 'Sorry, no people registered yet.'
+    puts "\n"
+    sleep(2)
+    run
     else
-      @people.each_with_index { |people, idx|
-        print "#{idx + 1}) [#{people.class}] Name: #{people.name}, Age: #{people.age}, ID: #{people.id}\n" }
+      @people.each_with_index do |people, idx|
+        print "#{idx + 1}) [#{people.class}] Name: #{people.name}, Age: #{people.age}, ID: #{people.id}\n"
+      end
       sleep(2)
-      run
     end
+    run
   end
 
   def add_rental
@@ -162,8 +168,9 @@ class App
     @books.each_with_index { |book, idx| print "#{idx + 1}) Title: #{book.title}, Author: #{book.author}\n" }
     book_to_rent = gets.chomp.to_i
     puts 'Please, select the number of the person for this rent:'
-    @people.each_with_index { |person, idx|
-      print "#{idx + 1}) [#{person.class}] Name: #{person.name}, Age: #{person.age}, ID: #{person.id}\n" }
+    @people.each_with_index do |person, idx|
+      print "#{idx + 1}) [#{person.class}] Name: #{person.name}, ID: #{person.id}\n"
+    end
     person_to_rent = gets.chomp.to_i
     puts 'Please, enter the date to start this rent ((YYY-MM-DD):'
     date = gets.chomp
@@ -177,13 +184,14 @@ class App
   def list_rentals
     if @people.length.positive?
       puts 'Please, type the ID of the person you want to rent from this list:'
-      @people.each_with_index { |people, idx|
-        print "#{idx + 1}) [#{people.class}] Name: #{people.name}, Age: #{people.age}, ID: #{people.id}\n" }
+      @people.each_with_index do |people, idx|
+        print "#{idx + 1}) [#{people.class}] Name: #{people.name}, ID: #{people.id}\n" 
+      end
       print 'ID of person: '
       person_id = gets.chomp.to_i
       print "Rentals:\n\n"
       @rentals.each do |rental|
-        puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}" if rental.person.id == person_id
+        puts "Date: #{rental.date}, Book: #{rental.book.title}" if rental.person.id == person_id
       end
     else
       print "There are no persons registered\n\n"
@@ -196,5 +204,6 @@ class App
     puts 'Thank you for using the OOP School Library App.'
     puts "\n" * 2
     sleep(2)
+    exit!
   end
 end
