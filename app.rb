@@ -136,7 +136,8 @@ class App
   def list_people
     puts 'List of all registered people:'
     puts "\n"
-    if @people.empty? then puts 'Sorry, no people registered yet.'
+    if @people.empty?
+      puts 'Sorry, no people registered yet.'
       puts "\n"
       sleep(2)
       run
