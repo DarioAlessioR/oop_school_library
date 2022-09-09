@@ -53,9 +53,9 @@ class App
     puts 'List of all books:'
     puts "\n"
     if @books.empty? then puts 'Sorry, no books available at this time.'
-    puts "\n"
-    sleep(2)
-    run
+      puts "\n"
+      sleep(2)
+      run
     else
       @books.each_with_index { |book, idx| print "#{idx + 1}) Title: #{book.title}, Author: #{book.author}\n" }
       sleep(2)
@@ -135,10 +135,10 @@ class App
   def list_people
     puts 'List of all registered people:'
     puts "\n"
-    if @people.length < 1 then puts 'Sorry, no people registered yet.'
-    puts "\n"
-    sleep(2)
-    run
+    if @people.empty? then puts 'Sorry, no people registered yet.'
+      puts "\n"
+      sleep(2)
+      run
     else
       @people.each_with_index do |people, idx|
         print "#{idx + 1}) [#{people.class}] Name: #{people.name}, Age: #{people.age}, ID: #{people.id}\n"
@@ -170,7 +170,7 @@ class App
     if @people.length.positive?
       puts 'Please, type the ID of the person you want to rent from this list:'
       @people.each_with_index do |people, idx|
-        print "#{idx + 1}) [#{people.class}] Name: #{people.name}, ID: #{people.id}\n" 
+        print "#{idx + 1}) [#{people.class}] Name: #{people.name}, ID: #{people.id}\n"
       end
       print 'ID of person: '
       person_id = gets.chomp.to_i
