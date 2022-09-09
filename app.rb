@@ -44,11 +44,8 @@ class App
       add_rental
     when '6'
       list_rentals
-    when '7'
+    else
       exit_from_app
-    else print "Please select a valid option (1 to 7)\n"
-    sleep(2)
-    run
     end
   end
 
