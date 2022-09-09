@@ -4,7 +4,7 @@ require_relative './teacher'
 require_relative './classroom'
 require_relative './rental'
 require_relative './book'
-require_relative './menu'
+require_relative './menu_options'
 
 class App
   def initialize
@@ -15,27 +15,7 @@ class App
 
   def run
     menu
-    options
-  end
-
-  def options
-    opc = gets.chomp
-    case opc
-    when '1'
-      list_books
-    when '2'
-      list_people
-    when '3'
-      add_person
-    when '4'
-      add_book
-    when '5'
-      add_rental
-    when '6'
-      list_rentals
-    else
-      exit_from_app
-    end
+    run_options
   end
 
   def list_books

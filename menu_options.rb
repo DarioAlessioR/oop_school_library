@@ -13,3 +13,23 @@ def menu
   puts '7) Exit from app'
   puts "\n"
 end
+
+def run_options
+  opc = gets.chomp
+  case opc
+  when '1'
+    list_books
+  when '2'
+    list_people
+  when '3'
+    add_person
+  when '4'
+    add_book
+  when '5'
+    add_rental
+  when '6'
+    list_rentals
+  else
+    exit_from_app
+  end
+end
