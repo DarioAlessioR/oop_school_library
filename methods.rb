@@ -33,7 +33,7 @@ def add_book
   run
 end
 
-def add_person
+def person_enrollable?
   puts 'Please, enter age:'
   age = gets.chomp.to_i
   if age < 18
@@ -45,25 +45,25 @@ def add_person
       sleep(2)
       run
     when 'y'
-      enroll(age)
+      teacher_or_student(age)
     else
       puts 'Please, select "y" or "n".'
       sleep(2)
       run
     end
   else
-    enroll(age)
+    teacher_or_student(age)
   end
 end
 
-def enroll(age)
+def teacher_or_student(age)
   puts 'Please enter 1 to create a teacher, 2 to create a student:'
   opc = gets.chomp
   case opc
   when '1'
-    enroll_teacher(age)
+    add_teacher(age)
   when '2'
-    enroll_student(age)
+    add_student(age)
   else
     puts 'Please select 1 or 2, no other options available.'
     sleep(2)
@@ -71,7 +71,7 @@ def enroll(age)
   run
 end
 
-def enroll_teacher(age)
+def add_teacher(age)
   puts 'Please enter name:'
   name = gets.chomp
   puts 'Please enter teacher specialization:'
@@ -84,7 +84,7 @@ def enroll_teacher(age)
   run
 end
 
-def enroll_student(age)
+def add_student(age)
   puts 'Please enter name:'
   name = gets.chomp
   student = Student.new(age, nil, name)
