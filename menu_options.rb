@@ -22,7 +22,7 @@ def run_options
   when '2'
     list_people
   when '3'
-    add_person
+    person_enrollable?
   when '4'
     add_book
   when '5'
