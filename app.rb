@@ -1,3 +1,4 @@
+require 'pry'
 require_relative './person'
 require_relative './student'
 require_relative './teacher'
@@ -5,6 +6,7 @@ require_relative './classroom'
 require_relative './rental'
 require_relative './book'
 require_relative './menu_options'
+require_relative './methods'
 
 class App
   def initialize
@@ -17,7 +19,7 @@ class App
     menu
     run_options
   end
-
+=begin
   def list_books
     print "List of all books:\n\n"
     if @books.empty?
@@ -167,4 +169,5 @@ class App
     sleep(2)
     exit!
   end
+=end
 end
