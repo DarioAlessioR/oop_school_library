@@ -13,17 +13,17 @@ end
 def people_data(people)
   people_data_array = []
   people.each do |item|
-  input_data = if item.instance_of?(Student)
-    {
-    class: item.class, age: item.age, name: item.name, clasroom: @clasroom,
-    id: item.id
-    }
-    else
-    {
-    class: item.class, age: item.age, name: item.name,
-    specialization: item.specialization, id: item.id
-    }
-    end
+    input_data = if item.instance_of?(Student)
+                   {
+                     class: item.class, age: item.age, name: item.name, clasroom: @clasroom,
+                     id: item.id
+                   }
+                 else
+                   {
+                     class: item.class, age: item.age, name: item.name,
+                     specialization: item.specialization, id: item.id
+                   }
+                 end
     people_data_array << input_data
   end
   people_data_array
@@ -52,7 +52,6 @@ def rentals_data(rentals)
   rentals_data_array
 end
 
-
 def write_people_data
   File.write('Data/people.json', JSON.pretty_generate(people_data(@people)))
 end
@@ -71,9 +70,9 @@ def read_people_data
     data = JSON.parse(people_file.read)
     data.each do |item|
       input_data = if item['class'] == 'Student'
-Student.new(item['age'], item['classroom'], item['name'], item['id'])
+                     Student.new(item['age'], item['classroom'], item['name'], item['id'])
                    else
-Teacher.new(item['age'], item['specialization'], item['name'], item['id'])
+                     Teacher.new(item['age'], item['specialization'], item['name'], item['id'])
                    end
       @people << input_data
     end
