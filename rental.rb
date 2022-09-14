@@ -1,10 +1,13 @@
-class Rental
-  attr_accessor :date, :book, :person
+require './book'
+require './person'
 
-  def initialize(date, book, person)
+class Rental
+  attr_accessor :date, :title, :id
+
+  def initialize(date, title, id)
     @date = date
-    @book = book
-    @person = person
+    @title = title
+    @id = id
     @rentals = []
   end
 

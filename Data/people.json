@@ -1,0 +1,37 @@
+[
+  {
+    "class": "Student",
+    "age": 22,
+    "name": "ddd",
+    "clasroom": null,
+    "id": 823
+  },
+  {
+    "class": "Student",
+    "age": 55,
+    "name": "ijkjijij",
+    "clasroom": null,
+    "id": 468
+  },
+  {
+    "class": "Teacher",
+    "age": 56,
+    "name": "ygygyg",
+    "specialization": "wwwww",
+    "id": 622
+  },
+  {
+    "class": "Student",
+    "age": 44,
+    "name": "ddddddd",
+    "clasroom": null,
+    "id": 987
+  },
+  {
+    "class": "Student",
+    "age": 11,
+    "name": "sasasas",
+    "clasroom": null,
+    "id": 429
+  }
+]

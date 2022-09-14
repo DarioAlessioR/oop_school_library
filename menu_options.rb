@@ -30,6 +30,7 @@ def run_options
   when '6'
     list_rentals
   else
+    write_data
     exit_from_app
   end
 end
