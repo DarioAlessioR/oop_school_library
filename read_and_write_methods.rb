@@ -15,13 +15,13 @@ def people_data(people)
   people.each do |item|
     if item.instance_of?(Student)
     people_data_array << {
-      class: item.class, age: item.age, name: item.name, clasroom: @clasroom,
-      id: item.id
+    class: item.class, age: item.age, name: item.name, clasroom: @clasroom,
+    id: item.id
     }
     else
     people_data_array << {
-      class: item.class, age: item.age, name: item.name,
-      specialization: item.specialization, id: item.id
+    class: item.class, age: item.age, name: item.name,
+    specialization: item.specialization, id: item.id
     }
     end
   end
