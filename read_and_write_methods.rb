@@ -13,17 +13,18 @@ end
 def people_data(people)
   people_data_array = []
   people.each do |item|
-    if item.instance_of?(Student)
-    people_data_array << {
+  input_data = if item.instance_of?(Student)
+    {
     class: item.class, age: item.age, name: item.name, clasroom: @clasroom,
     id: item.id
     }
     else
-    people_data_array << {
+    {
     class: item.class, age: item.age, name: item.name,
     specialization: item.specialization, id: item.id
     }
     end
+    people_data_array << input_data
   end
   people_data_array
 end
