@@ -71,7 +71,7 @@ def read_people_data
     data.each do |item|
       input_data = if item['class'] == 'Student'
         Student.new(item['age'], item['classroom'], item['name'], item['id'])
-      else
+                   else
         Teacher.new(item['age'], item['specialization'], item['name'], item['id'])
                    end
       @people << input_data
