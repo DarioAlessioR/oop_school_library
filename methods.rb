@@ -139,6 +139,7 @@ def list_rentals
     print 'ID of person: '
     person_id = gets.chomp.to_i
     print "Rentals:\n\n"
+    p @rentals
     @rentals.each do |rental|
       puts "Date: #{rental.date}, Book: #{rental.book.title}" if rental.person.id == person_id
     end
