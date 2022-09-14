@@ -123,7 +123,7 @@ def add_rental
   person_to_rent = gets.chomp.to_i
   puts 'Please, enter the date to start this rent ((YYY-MM-DD):'
   date = gets.chomp
-  rental = Rental.new(date, @books[book_to_rent - 1], @people[person_to_rent - 1])
+  rental = Rental.new(date, @books[book_to_rent - 1].title, @people[person_to_rent - 1].id)
   @rentals << rental
   puts 'Congratulations, you created a rental!!!'
   sleep(2)
@@ -139,9 +139,8 @@ def list_rentals
     print 'ID of person: '
     person_id = gets.chomp.to_i
     print "Rentals:\n\n"
-    p @rentals
     @rentals.each do |rental|
-      puts "Date: #{rental.date}, Book: #{rental.book.title}" if rental.person.id == person_id
+      puts "Date: #{rental.date}, Book: #{rental.title}" if rental.id == person_id
     end
   else
     print "There are no persons registered\n\n"

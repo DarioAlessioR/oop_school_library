@@ -19,5 +19,12 @@
     "name": "ygygyg",
     "specialization": "wwwww",
     "id": 622
+  },
+  {
+    "class": "Student",
+    "age": 44,
+    "name": "ddddddd",
+    "clasroom": null,
+    "id": 987
   }
 ]

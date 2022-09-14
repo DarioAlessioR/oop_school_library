@@ -44,9 +44,8 @@ def rentals_data(rentals)
   rentals.map do |item|
     rentals_data_array << {
       date: item.date,
-      book: item.book.title,
-      person: item.person.name,
-      id: item.person.id
+      title: item.title,
+      id: item.id
     }
   end
   rentals_data_array
@@ -99,7 +98,7 @@ def read_rentals_data
     rentals_file = File.open('Data/rentals.json')
     data = JSON.parse(rentals_file.read)
     data.each do |item|
-      @rentals << Rental.new(item['date'], item['book'], item['person'], item['id'])
+      @rentals << Rental.new(item['date'], item['title'], item['id'])
     end
     rentals_file.close
   else
