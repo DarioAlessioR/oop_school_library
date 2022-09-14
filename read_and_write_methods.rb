@@ -73,7 +73,7 @@ def read_people_data
         Student.new(item['age'], item['classroom'], item['name'], item['id'])
       else
         Teacher.new(item['age'], item['specialization'], item['name'], item['id'])
-      end
+                   end
       @people << input_data
     end
   else
