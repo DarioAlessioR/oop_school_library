@@ -26,5 +26,12 @@
     "name": "ddddddd",
     "clasroom": null,
     "id": 987
+  },
+  {
+    "class": "Student",
+    "age": 11,
+    "name": "sasasas",
+    "clasroom": null,
+    "id": 429
   }
 ]

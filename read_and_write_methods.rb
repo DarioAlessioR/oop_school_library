@@ -69,11 +69,12 @@ def read_people_data
     people_file = File.open('Data/people.json')
     data = JSON.parse(people_file.read)
     data.each do |item|
-      if item['class'] == 'Student'
-        @people << Student.new(item['age'], item['classroom'], item['name'], item['id'])
+      input_data = if item['class'] == 'Student'
+        Student.new(item['age'], item['classroom'], item['name'], item['id'])
       else
-        @people << Teacher.new(item['age'], item['specialization'], item['name'], item['id'])
+        Teacher.new(item['age'], item['specialization'], item['name'], item['id'])
       end
+      @people << input_data
     end
   else
     @people = []

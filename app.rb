@@ -10,7 +10,6 @@ require_relative './methods'
 require_relative './read_and_write_methods'
 require 'json'
 
-
 class App
   def initialize
     @people = []
